@@ -1,0 +1,397 @@
+\newcommand{\equationname}[0]{Equation}
+
+
+%\newcommand{\MyCaption}[3]{\caption[#1]{\textbf{#1} #2\label{#3}}}
+
+\newcommand{\MyAlgorithmReference}[1]{~(see Algorithm \MyRef{#1})}
+\newcommand{\MyListingReferenceComplete}[1]{~(see \lstlistingname~\MyRef{#1})}
+\newcommand{\MyListingReferenceCompleteInline}[1]{~see \lstlistingname~\MyRef{#1}}
+
+\newcommand{\MyCaption}[3]{\caption[#1]{#1 #2\label{#3}}}
+
+%%\newcommand{\MyCenterOneLine}[1]{  \begin{center}    \begin{tabular}{c}      #1\\    \end{tabular}  \end{center}}
+\newcommand{\MyCenterOneLine}[1]{  \begin{center}    \begin{tabular}{p{0.75 \textwidth}}   \raggedright{ #1} \\    \end{tabular}  \end{center}}
+
+\newcommand{\MyAppendixReference}[1]{~(see \appendixname~\MyRef{#1})}
+\newcommand{\MyChapterReference}[1]{~(see \chaptername~\MyRef{#1})}
+\newcommand{\MyChapterReferenceInline}[1]{ \chaptername~\MyRef{#1}~\nameref{#1}}
+\newcommand{\MyEquation}[1]{\begin{equation}
+\MyIncludeEquations{#1}
+\end{equation}
+}
+
+\newcommand{\MyEquationInline}[1]{\MyIncludeEquations{#1}}
+
+\newcommand{\MyInput}[1]{\textbf{\%\%\% Start of #1 \%\%\%}\input{#1}\textbf{\%\%\% End of #1 \%\%\%}}
+
+\newcommand{\MyEquationLabeled}[2]{\begin{equation}
+\MyIncludeEquations{#1}
+\label{#2}
+\end{equation}
+}
+
+\newcommand{\MyConstraintReference}[1]{~(see Constraint~\MyRef{#1})}
+
+\newcommand{\MyEquationReference}[1]{~(see \equationname~\MyRef{#1})}
+
+\newcommand{\MyEtAl}[0]{~et al.~}
+
+\newcommand{\MyFigureReference}[1]{~(see \figurename~\MyRef{#1})}
+\newcommand{\MyFigureReferenceInline}[1]{~see \figurename~\MyRef{#1}}
+\newcommand{\MyFigureAndEquationReference}[2]{ (see \figurename~\MyRef{#1} and \equationname~\MyRef{#1})}
+
+\newcommand{\MyFigureReferenceTwoOld}[2]{~(see \figurename~s~\MyRef{#1} and~\MyRef{#2})}
+\newcommand{\MyFigureReferenceTwo}[2]{~(see Figures \MyRef{#1}, and~\MyRef{#2})}
+\newcommand{\MyFigureReferenceTwoThrough}[2]{~(see Figures \MyRef{#1} through~\MyRef{#2})}
+
+\newcommand{\MyFigureTableReference}[2]{~(see \figurename~\MyRef{#1} and~\tablename~\MyRef{#2})}
+
+\newcommand{\MyFiguresOld}[4]{
+\begin{figure*}
+\centering
+\includegraphics[width=5.00in,angle=-90]{#1}
+\MyCaption{#2}{#3}{#4}
+\end{figure*}
+}
+
+\newcommand{\MyFigures}[5][-90]{
+\begin{figure*}
+\centering
+\includegraphics[width=0.5\textwidth,angle=#1]{#2}
+\MyCaption{#3}{#4}{#5}
+\end{figure*}
+}
+
+\newcommand{\MySectionName}[0]{Section}
+\newcommand{\MyAppendixName}[0]{Appendix}
+
+
+\newcommand{\MyHline}[0]{\noalign{\hrule height 2pt}}
+
+\newcommand{\MyIncludeEquations}[1]{\ensuremath{\input{Equations/#1}}}
+
+\newcommand{\MyIgnore}[1]{}
+
+\newcommand{\MyLeadIn}[1]{\item \emph{#1}}
+
+\newcommand{\MyLongtableEndhead}[0]{ \tablename\ \thetable{}. (Continued from the previous page.)}
+
+\newcommand{\MyLongtableEndfoot}[0]{(Continued on the next page.)}
+
+\newcommand{\MyNoteReference}[1]{~(see Note~\MyRef{#1})}
+
+\newcommand{\MyPageReference}[1]{~(see page~\pageref{#1})}
+
+\newcommand{\MyRelatedWork}[2]{\input RelatedWorks/#2}
+
+\newcommand{\MySectionReference}[1]{~(see \MySectionName~\MyRef{#1})}
+\newcommand{\MySectionReferenceInline}[1]{~see \MySectionName~\MyRef{#1}}
+
+\newcommand{\MySectionNameReference}[1]{~(see \MySectionName~\MyRef{#1}, ``\nameref{#1}'', page \pageref{#1})}
+
+\newcommand{\MySubSection}[1]{\subsection{#1}\Plots{#1}}
+
+\newcommand{\MySubSubSection}[1]{\subsubsection{#1}\Plots{#1}}
+
+\newcommand{\MySubsubsection}[1]{\paragraph{#1}\vspace{10pt}}
+
+\newcommand{\MySubsubsubsection}[1]{\subparagraph{#1}}
+
+\newcommand{\MyTableReference}[1]{~(see~\tablename~\MyRef{#1})}
+\newcommand{\MyTableReferenceInline}[2][see]{~#1~\tablename~\MyRef{#2}}
+
+\newcommand{\MyTableReferenceTwo}[2]{~(see~\tablename~\MyRef{#1}~and~\tablename~\MyRef{#2})}
+
+\newcommand{\MySmallWorldLC}[0]{small-world}
+\newcommand{\MySmallWorldIC}[0]{Small-world}
+\newcommand{\MySmallWorldC}[0]{Small-World}
+
+\newcommand{\MyUSWFullLC}[0]{unsupervised~\MySmallWorldLC }
+
+\newcommand{\MyUSWFullCap}[0]{Unsupervised~\MySmallWorldC }
+
+\newcommand{\MyUSWFullDesc}[0]{\MyUSWFullCap~(USW)}
+\newcommand{\MyUSWFullDescLC}[0]{\MyUSWFullLC~(USW)}
+
+\newcommand{\MyUSWAllCaps}[0]{UNSUPERVISED SMALL-WORLD}
+
+\makeatletter
+\newcommand*{\MyCompress}{\@minipagetrue}
+\makeatother
+
+ %%%%%%%%%%%   Start of limited usage commands. %%%%%%%%%%
+
+\newcommand{\Caption}[1]{The first level graph presented to the #1 attack profile.}
+
+\newcommand{\Plots}[2]{
+\begin{figure*}
+\centering
+\includegraphics[width=5.0in,angle=-90]{Images/Examples/#1/Rplot001.ps}
+\MyCaption{\Caption{#1}}{#2}{fig:#1}
+\end{figure*}
+}
+
+
+\newcommand{\Elements}[1]{\cellcolor[gray]{0.5} #1}
+
+\newcommand{\Turns}[1]{\cellcolor[gray]{0.8} #1}
+
+\newcommand{\MyWattsStrogatz}[0]{Watts -- Strogatz}
+
+\newcommand{\MyPageSetup}[0]{
+\RequirePackage{calc}
+
+%%%%%% define new lengths %%%%%%%
+\newlength{\myrightmargin}
+\newlength{\myleftmargin}
+\newlength{\mytopmargin}
+\newlength{\mybottommargin}
+
+%%%%%%%%%%%%%%%%% set margins here %%%%%%%%%%%%%%%%%%%
+\setlength{\myrightmargin}{1.0in}
+\setlength{\myleftmargin}{1.0in}
+\setlength{\mytopmargin}{1.0in}    
+\setlength{\mybottommargin}{1.0in}
+%% \setlength{\mybottommargin}{0.0in}
+\setlength{\oddsidemargin}{0.0in}   % extra room on inside side
+
+%%%%%%%%%%%%% calculate width variables %%%%%%%%%%%%%%
+\setlength{\evensidemargin}{0 in}
+\setlength{\marginparsep}{0 in}
+\setlength{\marginparwidth}{0 in}
+\setlength{\hoffset}{\myleftmargin - 1.0in}
+\setlength{\textwidth}{8.5in -\myleftmargin -\myrightmargin -\oddsidemargin}
+
+%%%%%%%%%%%% calculate height variables  %%%%%%%%%%%%%
+\setlength{\voffset}{\mytopmargin -1.0in}
+\setlength{\topmargin}{0 in}
+\setlength{\headheight}{12pt}
+\setlength{\headsep}{20pt}
+%% \setlength{\footskip}{36pt}
+\setlength{\footskip}{30pt}
+\setlength{\textheight}  {11.0in-\mytopmargin-\mybottommargin-\headheight-\headsep-\footskip} 
+}
+
+%%%%%%%%%%%%% End of the limited usage commands. %%%%%%%%%%
+
+\newcommand{\MyFloats}[0] {
+%  These commands and ideas come from: http://mintaka.sdsu.edu/GF/bibliog/latex/floats.html
+% Alter some LaTeX defaults for better treatment of figures:
+    % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+%    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    \renewcommand{\textfraction}{0.01}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+	% remember to use [htp] or [htpb] for placement
+}
+
+\newcommand{\MyTopRule}[0]{\toprule[2 pt]}
+\newcommand{\MyBottomRule}[0]{\toprule[2 pt]}
+
+\newcommand{\MyNeedsReview}[1]{\huge \textbf{Needs review (\#\arabic{NeedsReviewCounter})}. #1 \normalsize\stepcounter{NeedsReviewCounter}}
+\newcounter{NeedsReviewCounter}
+\setcounter{NeedsReviewCounter}{1}
+
+\newcommand{\MyLongtableSetup}[7][(Last page.)]{\MyLongtableWorker{#2}{#3}{#4}{#5}{#6}{#7}{#1}
+}
+
+\newcommand{\MyLongtableWorker}[7]{
+  \begin{center}
+    \setlength{\extrarowheight}{3pt}
+    \begin{longtable}{#6}
+      \MyCaption{#3}{#4}{#5} \\
+      \MyTopRule
+        #1 \\
+      \hline
+      \endfirsthead
+
+      \multicolumn{#2}{c}{\MyLongtableEndhead} \\
+      \MyTopRule
+      #1 \\
+      \hline
+      \endhead
+
+      \hline 
+      \multicolumn{#2}{r}{\MyLongtableEndfoot} \\
+      \endfoot
+
+      \MyBottomRule
+      \multicolumn{#2}{r}{#7} \\
+      \endlastfoot
+}
+
+\newcommand{\MyLongtableSetupOld}[6]{  %%[(Last page.)]{
+  \begin{center}
+    \setlength{\extrarowheight}{10pt}
+    \begin{longtable}{#6}
+      \MyCaption{#3}{#4}{#5} \\
+      \MyTopRule
+        #1 \\
+      \hline
+      \endfirsthead
+
+      \multicolumn{#2}{c}{\MyLongtableEndhead} \\
+      \MyTopRule
+      #1 \\
+      \hline
+      \endhead
+
+      \hline 
+      \multicolumn{#2}{r}{\MyLongtableEndfoot} \\
+      \endfoot
+
+      \MyBottomRule
+      \multicolumn{#2}{r}{(Last page.)} \\
+      \endlastfoot
+}
+
+
+\newcommand{\MyLongtableWrapup}{
+    \end{longtable}
+    \end{center}
+}
+
+\RequirePackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+\newcommand{\MyQuotationOld}[3]{
+  \begin{quotation}
+    \textit{#1} \\   
+    \hfill \mbox{{\normalfont #2 \cite{#3}}}
+  \end{quotation}
+}
+
+\newcommand{\MyQuotation}[3]{
+  \begin{quotation}
+    \textit{#1}
+    \begin{flushright}
+      #2 \cite{#3}
+    \end{flushright}
+  \end{quotation}
+}
+
+\newlength{\textundbildtextheight}
+ 
+\newcommand{\textundbild}[2]{
+\settototalheight\textundbildtextheight{\vbox{#1}}
+#1
+\vfill
+\begin{center}
+\includegraphics[width=\textwidth,keepaspectratio=true,height=\textheight-\the\textundbildtextheight]{#2}
+\end{center}
+\vfill
+}
+
+\def\MyChangeMargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endMyChangeMargin=\endlist
+
+\newcommand{\MyRef}[1]{\ref{#1}}
+
+\newcounter{ThumbIndexCounter}
+\setcounter{ThumbIndexCounter}{0}
+\newcommand{\MyThumbIndex}[0]{
+  \stepcounter{ThumbIndexCounter}
+  \label{thmb:{\theThumbIndexCounter}}
+  \addthumb{\@currentlabelname}{\ref{thmb:{\theThumbIndexCounter}}}{white}{black}
+}
+
+\RequirePackage{xcolor}
+\definecolor{MyBlue}{RGB}{40,96,139}
+\definecolor{MyRed}{RGB}{255,0,0}
+
+\makeatletter
+\newenvironment{MyBlock}[2][\linewidth]
+  {\begin{mdframed}[
+  align=center,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+  roundcorner=5pt,
+  shadow=true,
+  shadowsize=4pt,
+  frametitle=\phantom{#2},
+  frametitlebelowskip=15pt,
+  font=\sffamily,
+  innerleftmargin=12pt,
+  innerrightmargin=12pt,
+  frametitlefont=\Large\sffamily\bfseries\color{white},
+  singleextra={
+%  \path[top color=MyBlue!30,bottom color=MyBlue!0.5,rounded corners]
+  \path[top color=MyRed,bottom color=MyBlue!0.5,rounded corners]
+    ([xshift=\pgflinewidth,yshift=-\pgflinewidth]O|-P) rectangle
+    ([xshift=-\pgflinewidth,yshift=-20pt]P) -- cycle;
+  \path[fill=MyBlue]
+    ([xshift=5pt,yshift=-\pgflinewidth]O|-P.north west) to[out=0,in=180]
+    ([xshift=20pt,yshift=-25pt]O|-P.north west) --
+    ([xshift=-20pt,yshift=-25pt]P.south east) to[out=0,in=180]
+    ([xshift=-5pt,yshift=-\pgflinewidth]P.north east) -- cycle;
+  \path let \p1=(P), \p2= (O) in 
+    node at ([yshift=-12pt]0.5*\x1+0.5*\x2,\y1) {\parbox{\dimexpr\mdf@userdefinedwidth@length-40pt\relax
+}{\centering\mdf@frametitlefont#2}};
+  },
+  userdefinedwidth=#1]}
+  {\end{mdframed}}
+\makeatother
+
+\newcommand{\MyUserNotification}[3] {
+%\def\adjboxvtop{\ht\strutbox} 
+\def\adjboxvtop{0.2\height} 
+ \begin{table}[h!]
+    \centering
+    \begin{tabular}{cp{0.5\textwidth}}
+      \MyHline
+%%      \includegraphics[valign=t,scale=#2]{#1} & \textrm{#3} \\
+      \includegraphics[valign=t,width=0.15\textwidth]{#1} & \textrm{#3} \\
+      \MyHline
+    \end{tabular}
+  \end{table}
+}
+
+\newcommand{\MyBestPractice}[1] {\MyUserNotification{Images/bestPractice}{0.25}{#1}}
+\newcommand{\MyNote}[1] {\MyUserNotification{Images/post_up_note}{0.25}{#1}}
+
+\newcommand{\MyDefinedAs}[0]{\ensuremath{\stackrel{\text{def.}}{\hbox{\equalsfill}}}}
+
+\newcommand{\MyColorBoxWorker}[3]
+{
+  \begin{tcolorbox}[enhanced,title={#1},
+attach boxed title to top center={yshift=-\tcboxedtitleheight/2},
+boxed title style={colback=#3}]
+#2
+\end{tcolorbox}
+}
+
+\newcommand{\MyColorBoxBlue}[2]
+{
+  \MyColorBoxWorker{#1}{#2}{blue}
+}
+
+\newcommand{\MyTempCommand}[0]{}
+
+\newenvironment{tight_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+}{\end{itemize}}
+
+
+\makeatletter
+\def\equalsfill{$\m@th\mathord=\mkern-7mu
+\cleaders\hbox{$\!\mathord=\!$}\hfill
+\mkern-7mu\mathord=$}
+\makeatother
