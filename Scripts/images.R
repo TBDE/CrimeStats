@@ -154,7 +154,7 @@ main <- function()
         load(f)
         totalDistances <- c(totalDistances, collectionOfDistances)
         colors <- c(colors, rep(counter, length(collectionOfDistances)))
-        if (FALSE)
+        if (TRUE)
         {
             fileName <- sprintf("../Images/satellite-%02d.png", counter)
             png(filename=fileName, type="cairo")
