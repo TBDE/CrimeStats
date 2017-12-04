@@ -1,0 +1,7 @@
+Police indicent reports (also sometimes call crime reports) are a tabulation of the cimes within an area.  Government is responsible for the safety and security of its citizens.  Combining these to semi-related data and requirements, means that a government should  place police precints (or places from which peace keepers can come from) at locations that are closest to the reported crimes.
+
+At first glance, it would appear that determining the optimal location of the precincts is a geo-spatial clustering problem.  But it isn't.  Classical spatial clustering attempts to build clusters from spatial data points based on: the closeness of adjacent points, and a minimum number of points that defines a cluster.  Once these clusters are identified, then a centroid can be computed.  Clusters in a spatial context can have very complex and irregular shapes.
+
+Identfying the optimal centroid location depends on the minimizing the distance between data points and the centroid.  When locating these optimal locations, the problem is complicated by the fact that some of the locations are fixed and cannot move.  These fixed locations affect the location of non-fixed precincts.
+
+The problem is where to locate new precincts, especially when there are already precincts built.

@@ -1,0 +1,5 @@
+We downloaded over \numprint{100000} real-life police incident reports from the City of Virginia Beach, VA, USA covering the period from January 2015 to mid-August 2017.  We wrote, tested and debugged an R script used to find the optimal location for new police precinct headquarters taking into account the four current precinct locations and up to eight new precinct locations.  Program execution was not fast.  It took \numprint{168284} seconds, or \numprint{46.75} hours for a complete run.
+
+For our purposes, an optimal location for a precinct was determined when the sum of the distances from all precincts to all crimes assigned to that precinct remained constant.  The addition of more precincts provided incremental improvements that were relatively constant for long periods of time, and number of precincts.  There were step-wise improvements in the system behavior, but the execution time was so long as to make exploration of these steps impractical.
+
+The system was able to reduce the distance from one precinct to all crimes from approximately \numprint{1250000} to less than \numprint{390000} and 12 precincts.

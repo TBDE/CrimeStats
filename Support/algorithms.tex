@@ -1,0 +1,84 @@
+From an algorthmic perspective, the program is very simple, just a set of nested loops\MyAlgorithmReference{alg:overview}.  Updating the precinct locations is easy as well\MyAlgorithmReference{alg:update}.  Adding a unused precinct to the system is also easy \MyAlgorithmReference{alg:missing}.
+\begin{algorithm}
+  \MyCaption{Overall system algorithm.}{}{alg:overview}
+  \DontPrintSemicolon
+  \KwData{PrecinctData $\gets$ initial data}
+  \KwData{CrimeData $\gets$ inital data}
+  \Begin{
+      $MaxIterations \gets 100$ \;
+      $CrimeData \gets precinct\ \#1$ \;
+      \For{$p \in PrecinctData$}{
+        $PrecinctData \gets updatedLocationBasedOnCrimeAssignedData$ \;
+        $DoWork \gets TRUE$  \;
+        $IterationCounter \gets 0$ \;
+        \While{$((IterationCounter \leq MaxIterations) AND (DoWork == TRUE))$}{
+          $IterationCounter \gets IterationCounter + 1$ \;
+          $DoWork \gets FALSE$  \;
+          \For{$i \in CrimeData$}
+              {
+                \For{$j \in p$}
+                    {
+                      $Dist \gets DistanceFromCrimeToJ$\;
+                      \If{$Dist < CrimeDataDistance$}
+                         {
+                           $CrimeDataDistance \gets Dist$\;
+                           $CrimeDataPrecinct \gets j$\;
+                           $DoWork \gets TRUE$  \;
+                         }
+                    }
+              }
+              $SumOfDistances \gets \sum CrimeDataDistance$\;
+              $NunberOfUsedPrecincts \gets unique CrimeDataPrecinct$\;
+              \If{$((SumOfDistances \neq OldSumOfDistances) OR (NunberOfUsedPrecincts \neq p))$}{
+                $DoWork \gets TRUE$  \;
+                \If {$NunberOfUsedPrecincts \neq p$}
+                    {
+                      $PrecinctData \gets addMissingPrecinct()$\;
+                    }
+              }
+              \If{$DoWork == TRUE$}
+                 {
+                   $PrecinctData \gets updatedLocationBasedOnCrimeAssignedData$ \;
+                 }
+        }
+      }
+    }
+  \end{algorithm}
+  \begin{algorithm}
+    \MyCaption{Updating precinct location based on assigned crimes.}{}{alg:update}
+    \DontPrintSemicolon
+    \Begin{
+        \For{$p \in PrecinctData$}
+            {
+              \If{crimes assigned to p}
+                 {
+                   \If{p is moveable}
+                      {
+                        p location data $\gets$ median crime location data \;
+                      }
+                 }
+            }        
+      }
+      \Return Updated PrecinctData
+    \end{algorithm}
+    \begin{algorithm}
+      \MyCaption{Adding a missing precinct.}{}{alg:missing}
+      \DontPrintSemicolon
+      \Begin{
+          $ListOfPrecinctsUsed \gets CrimeData$ \;
+          \For{$p \in PrecinctData$}
+              {
+                \If{$p \in ListOfPrecinctsUsed$}
+                   {
+                     Find p with greatest crime distance $\sigma$ \;
+                     $pMax \gets p$\;
+                   }
+              }
+              \If{PrecinctData[pMax] is movable}
+                 {
+                   Find crime location that is furthest from $pMax$ \;
+                   Update PrecinctData with location midway between $pMax$ and crime location \;
+                 }
+        }
+        \Return Updated PrecinctData
+      \end{algorithm}

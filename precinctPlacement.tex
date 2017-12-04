@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+\input{localPreamble}
+\input{MyCommands}
+\input{localCommands}
+
+\renewcommand{\MyRef}[1]{\vref{#1}}
+
+\MyPageSetup
+
+\title{Using Crime Statistics to Recommend Police Precinct Locations}
+
+\author{Chuck Cartledge\\
+  \texttt{chuck@clc-ent.com}
+  \and
+  John Sinues\\
+\texttt{walkandride@hotmail.com}}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\tableofcontents
+%% \listoftables
+\listofalgorithms
+\listoffigures
+\cleardoublepage
+\thispagestyle{empty}
+\pagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\section{Introduction}
+\input{introduction}
+\section{Problem definition}
+\input{problem}
+\section{Algorithms}
+\input{algorithms}
+%% \end{document}
+\section{Data Sources}
+\input{dataSources}
+\section{Results}
+\input{results}
+\section{Areas for improvement}
+\input{improvements}
+\section{Conclusion}
+\input{conclusion}
+\section{References}
+\input{references}
+\appendix
+\section{R script files}
+\input{files}
+\end{document}
+
+\Huge
+\huge
+\LARGE
+\Large
+\large
+\normalsize (default)
+\small
+\footnotesize
+\scriptsize
+\tiny

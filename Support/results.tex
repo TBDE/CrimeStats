@@ -1,0 +1,52 @@
+Data was collected after a precinct was added to the system, and the system reached a current optimal solution.  The following figures show the solution based on the number of fixed and movable precincts, boxplots of the distances from each crime to its assigned precinct, and a plot showing the rate of each system towards closure.
+
+\renewcommand{\MyTempCommand}[3][s]{
+  \cleardoublepage
+  \begin{figure}
+    \begin{center}
+      \begin{minipage}[h]{0.6\textwidth}
+        \includegraphics[width=\linewidth, keepaspectratio]{Images/satellite-#2}
+      \end{minipage}
+      
+    \end{center}
+      \begin{minipage}[h]{0.45\textwidth}
+        \includegraphics[width=\textwidth, keepaspectratio]{Images/boxplot-#2}
+      \end{minipage}
+      \hfill
+      \begin{minipage}[h]{0.45\textwidth}
+        \includegraphics[width=\textwidth, keepaspectratio]{Images/closure-#2}
+      \end{minipage}
+        \MyCaption{Satellite imagery showing the location of \numprint{#3} precinct#1 and assigned crimes.}{Fixed precincts are shown as white squares in the satellite imagery.  Movable precints are shown as white triangles.  The ``greyed'' precincts in the boxplots are fixed (aka, immovable).  The system iterates towards stability, and is shown as decreasigng sum of distances, and percentage change per iteration.}{fig:satellite-#2}
+      
+    \end{figure}
+}
+
+\MyTempCommand[]{01}{1}
+\MyTempCommand{02}{2}
+\MyTempCommand{03}{3}
+\MyTempCommand{04}{4}
+\MyTempCommand{05}{5}
+\MyTempCommand{06}{6}
+\MyTempCommand{07}{7}
+\MyTempCommand{08}{8}
+\MyTempCommand{09}{9}
+\MyTempCommand{10}{10}
+\MyTempCommand{11}{11}
+\MyTempCommand{12}{12}
+\cleardoublepage
+The performance of the system (as measured by sum of distances from assigned precincts) is best illustrated by \MyFigureReference{fig:overallPerformance}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{Images/systemColsure}
+  \MyCaption{Overall system optimization performance.}{Each color change means that a new precinct has been added to the system.  Each marker of the same color show how the system has reduced the sum of distances for that number of precincts.  In general, when a new precinct is added, there is a relatively significant improvement.  As more precincts are added, it takes longer for the system to optimize.  The width of the plateaus is interesting as well.  The first plateau is from 8 to about 42, and the second is from about 44 to 110.  It is almost as if they are doubling in width.  Meaning there are wide ranges of program iteration where minimal system improvement is obtained.}{fig:overallPerformance}
+\end{figure}
+
+While the system is attempting to obtain an optimal solution; precincts that are movable, move. The movements of precinct 5 (the first movable precinct) are presented\MyFigureReference{img:movement}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{Images/precinctMovement}
+  \MyCaption{Movement of precinct 5.}{The four fixed precinct locations are shown as red squares.  Precinct 5 (in black circles) starts in the south and ``migrates'' towards the North until it becomes nearly fixed.}{img:movement}
+  
+\end{figure}

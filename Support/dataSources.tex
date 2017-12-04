@@ -1,0 +1,24 @@
+The goal of the program is to find optimal placement of movable police precincts (sometimes called kiosks) in a ``field'' fixed precincts and historical crime location data.  
+\subsection{Crime statistics}
+For Virginia Beach, VA, historical crime data (aka, police incident reports) is available online as a comma separated value (CSV) file from \url{https://data.vbgov.com/Public-Safety/Police-Incident-Reports/iqkq-gr5p}.
+The csv file has a header line identifying the various data fields:
+\begin{multicols}{2}
+  
+\begin{enumerate}
+\item Police Case Number
+\item Date Reported
+\item Date Occurred
+\item Date Found
+\item Offense Code
+\item Offense Description
+\item Subdivision
+\item Zone ID
+\item Case Status
+\item Location
+
+\end{enumerate}
+\end{multicols}
+
+Location data (latitude and longitude in decimal degrees, +North and +East) were used to locate the crime in the data ``field.''  Crime reports ranged from January 2015 through September 2017 as \numprint{350261} physical records, and approximately \numprint{113664} logical records.  In the data file, there was one header record, and three physical records per logical records.  The location records were constrained to a bounding box between -76 and -75 degrees longitude and 36 to 37.5 degrees latitude, essentially the bounds of the city of Virginia Beach.  Approximately \numprint{3089}, or 0.9\% of the crime locations were outside this bounding box.
+\subsection{Precinct locations}
+The street address for each of the current police precincts is available online from \url{https://www.vbgov.com/government/departments/police/opsdiv/Pages/pct.aspx}.  A street address can be converted to a latitude and longitude online using this URL \url{https://www.latlong.net/convert-address-to-lat-long.html}.\footnote{The small number of fixed precincts did not justify the time and effort to use a RESTfull, or HTTP API to convert them pragmatically.}  Locations of fixed precincts will not be adjusted or moved by the software.  Movable precincts are shifted around the data field in an effort to achieve the optimal solution.
